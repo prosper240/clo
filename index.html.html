@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<style media="screen">
+  * {
+    color: black;
+    background-color: white;
+  }
+</style>
+<body>
+  <h2>CLOCK</h2>
+    <p id="heure"></p>
+    <p id="date"></p>
+    <script>
+        const result =document.getElementById('heure');
+        const UIdate =document.getElementById('date');
+        const nameOfDay ={
+
+        }
+        let hours,mins,secs,day;
+        function clock(){
+            const today =new Date();
+            hours=today.getHours();
+            mins=today.getMinutes();
+            secs =today.getSeconds();
+
+            result.innerText=`${pretend(hours)}:${pretend(mins)}:${pretend(secs)}`;
+        }
+        function displayDate(){
+            const today =new Date();
+
+            day = today.getDate()
+            month = today.getMonth() +1
+            year = today.getFullYear()
+
+            UIdate.innerText = `${pretend(day)} / ${pretend(month)} / ${year}`
+        }
+        function pretend(value){
+            return value<10 ?`0${value}`:`${value}`;
+        }
+        displayDate();
+        clock();
+        setInterval(clock, 1000);
+
+
+
+
+        //if statement in one ligne
+        let text =name ==='regan' && password=="12"? 'yes' :'no';
+    </script>
+</body>
+</html>
